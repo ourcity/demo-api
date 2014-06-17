@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :committees
+    resources :council_members
   end
 
   # You can have the root of your site routed with "root"

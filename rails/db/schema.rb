@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140617022924) do
+ActiveRecord::Schema.define(version: 20140617023531) do
 
   create_table "committees", force: true do |t|
     t.string   "name"
@@ -19,5 +19,17 @@ ActiveRecord::Schema.define(version: 20140617022924) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "council_members", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "ward"
+    t.date     "term_start"
+    t.integer  "committee_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "council_members", ["committee_id"], name: "index_council_members_on_committee_id"
 
 end
